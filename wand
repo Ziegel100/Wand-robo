@@ -1,0 +1,18 @@
+ boolean abstand() {
+        double AW = 60;
+
+        if (getX() <= AW || getY() <= AW || getX() >= getBattleFieldWidth() - AW || getY() >= getBattleFieldHeight() - AW) {
+            if (getVelocity() == 0 && zaehler <= 18) {
+                turn(10);
+                zaehler = zaehler + 1;
+                return false;
+            } else if (zaehler > 18) {
+                ahead(40);
+                zaehler = 0;
+                return false;
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
